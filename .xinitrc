@@ -1,17 +1,14 @@
 #!/bin/sh
 
-xrdb "$HOME/.Xresources"
+xrdb "$XDG_CONFIG_HOME/X11/Xresources"
 setxkbmap -option caps:super
 xbindkeys &
-compton -CGb --config "$HOME/.config/compton/compton.conf"
-systemctl --user import-environment DISPLAY
-dunst -config "$HOME/.config/dunst/dunstrc" &
-redshift &
+compton -CGb --config "$XDG_CONFIG_HOME/picom/picom.conf"
+dunst -config "$XDG_CONFIG_HOME/dunst/dunstrc" &
 
-xset +fp "$HOME/.fonts"
+xset +fp "$XDG_DATA_HOME/fonts"
 xset fp rehash
 
 export XDG_SESSION_TYPE=X11
-sxhkd -c "$HOME"/.config/berry/sxhkdrc &
+sxhkd -c "$XDG_CONFIG_HOME/berry/sxhkdrc" &
 exec berry -d -f 'Dina-9' > /tmp/log.txt 2>&1
-#exec openbox-session
