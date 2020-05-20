@@ -3,7 +3,7 @@
 xrdb "$XDG_CONFIG_HOME/X11/Xresources"
 setxkbmap -option caps:super
 xbindkeys &
-compton -CGb --config "$XDG_CONFIG_HOME/picom/picom.conf"
+picom -CGb --config "$XDG_CONFIG_HOME/picom/picom.conf"
 dunst -config "$XDG_CONFIG_HOME/dunst/dunstrc" &
 
 xset +fp "$XDG_DATA_HOME/fonts"
