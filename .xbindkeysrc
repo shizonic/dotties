@@ -1,0 +1,27 @@
+"xbindkeys_show" 
+  control+shift + q
+
+# specify a mouse button
+"xterm"
+  control + b:2
+
+# increase by 3%
+"amixer -q sset Master 3%+"
+  XF86AudioRaiseVolume
+
+# decrease by 3%
+"amixer -q sset Master 3%-"
+  XF86AudioLowerVolume
+
+# mute/unmute
+"amixer -D pulse set Master 1+ toggle"
+  XF86AudioMute
+
+"xbacklight -inc 10"
+  XF86MonBrightnessUp
+
+"xbacklight -dec 10"
+  XF86MonBrightnessDown
+
+"toggle_bar"
+  XF86Tools
